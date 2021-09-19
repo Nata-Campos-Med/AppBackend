@@ -11,8 +11,8 @@ public class UsuarioDAO {
 
 	Conexion con = new Conexion();
 
-	public boolean buscar(String cedula) {
-		String sentencia = String.format(Constantes.CONSULTAR, cedula);
+	public boolean buscar(String cedula, String consultas) {
+		String sentencia = String.format(consultas, cedula);
 		if (con.ejecutarSentenciaSQL(sentencia)) {
 			return true;
 		} else {
@@ -20,9 +20,9 @@ public class UsuarioDAO {
 		}
 	}
 
-	public boolean crear(UsuarioDTO usDTO) {
-		if (!buscar(usDTO.getCedula())) {
-			String sentencia = String.format(Constantes.CREAR, usDTO.getCedula(), usDTO.getEmail(), usDTO.getNombre(),
+	public boolean crear(UsuarioDTO usDTO, String consultas, String crear) {
+		if (!buscar(usDTO.getCedula(), consultas)) {
+			String sentencia = String.format(crear, usDTO.getCedula(), usDTO.getEmail(), usDTO.getNombre(),
 					usDTO.getUser(), usDTO.getPassword());
 			con.ejecutarSentenciaSQL(sentencia);
 			return true;
@@ -39,18 +39,18 @@ public class UsuarioDAO {
 //        }
 //    }
 
-	public ResultSet consultar(String cedula) {
-		if (buscar(cedula)) {
-			String sentencia = String.format(Constantes.CONSULTAR, cedula);
+	public ResultSet consultar(String cedula, String consultas) {
+		if (buscar(cedula, consultas)) {
+			String sentencia = String.format(consultas, cedula);
 			return con.consultarRegistros(sentencia);
 		} else {
 			return null;
 		}
 	}
 
-	public boolean actualizar(String cedula, UsuarioDTO usDTO) {
-		if (buscar(cedula)) {
-			String sentencia = String.format(Constantes.ACTUALIZAR, usDTO.getEmail(), usDTO.getNombre(),
+	public boolean actualizar(String cedula, UsuarioDTO usDTO, String consultas, String actualizar) {
+		if (buscar(cedula, consultas)) {
+			String sentencia = String.format(actualizar, usDTO.getEmail(), usDTO.getNombre(),
 					usDTO.getUser(), usDTO.getPassword(), cedula);
 			con.ejecutarSentenciaSQL(sentencia);
 			return true;
@@ -59,9 +59,9 @@ public class UsuarioDAO {
 		}
 	}
 
-	public boolean eliminar(String cedula) {
-		if (buscar(cedula)) {
-			String sentencia = String.format(Constantes.ELIMINAR, cedula);
+	public boolean eliminar(String cedula, String consultas, String eliminar) {
+		if (buscar(cedula, consultas)) {
+			String sentencia = String.format(eliminar, cedula);
 			con.ejecutarSentenciaSQL(sentencia);
 			return true;
 		} else {
