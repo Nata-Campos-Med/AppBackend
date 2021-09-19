@@ -4,7 +4,7 @@ package modelo;
 public class UsuarioDTO {
     private String nombre, cedula, email, password, user; 
 
-    public UsuarioDTO(String nombre, String cedula, String email, String password, String user) {
+    public UsuarioDTO(String nombre, String cedula, String email, String user, String password) {
         this.nombre = nombre;
         this.cedula = cedula;
         this.email = email;

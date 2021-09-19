@@ -6,7 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import util.Constantes;
+
+import util.DatosSQL;
 
 public class Conexion {
 
@@ -20,7 +21,7 @@ public class Conexion {
     public Conexion(String crearDB) throws ClassNotFoundException {
         try {
             Class.forName("com.mysql.jdvc.Driver");
-            this.connetion = DriverManager.getConnection(Constantes.URL, Constantes.USUARIO, Constantes.CONTRASENHA);
+            this.connetion = DriverManager.getConnection(DatosSQL.URL, DatosSQL.USUARIO, DatosSQL.CONTRASENHA);
             PreparedStatement pstm = this.connetion.prepareStatement(crearDB);
             pstm.execute();
             this.connetion.close();
@@ -31,7 +32,8 @@ public class Conexion {
 
     public void conectar() {
         try {
-            this.connetion = DriverManager.getConnection(Constantes.URL, Constantes.USUARIO, Constantes.CONTRASENHA);
+            this.connetion = DriverManager.getConnection(DatosSQL.URL, DatosSQL.USUARIO, DatosSQL.CONTRASENHA);
+            System.out.println("base de datos conectada ");
         } catch (SQLException exception) {
         }
     }
@@ -44,12 +46,13 @@ public class Conexion {
         }
     }
 
-    public int ejecutarSentenciaSQL(String sentencia) {
+    public boolean ejecutarSentenciaSQL(String sentencia) {
         try {
             PreparedStatement pst = this.connetion.prepareStatement(sentencia);
-            return pst.executeUpdate();
+             pst.executeUpdate();
+             return true;
         } catch (SQLException sqlException) {
-            return 0;
+            return false;
         }
 
     }
