@@ -1,13 +1,10 @@
 package UsuarioDAO;
 
 import java.sql.ResultSet;
-import java.sql.SQLException;
-
 import modelo.Conexion;
 import modelo.UsuarioDTO;
-import util.Constantes;
 
-public class UsuarioDAO {
+public class GeneralDAO {
 
 	Conexion con = new Conexion();
 
