@@ -1,5 +1,6 @@
 package ElEcuipoGrupos30.Backend.modelo;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -7,42 +8,48 @@ import javax.persistence.Id;
 public class Clientes {
 	
 	@Id
-	 private long cedula_cliente;// igual al de la base de datos
-	 private String direccion_cliente;
-	 private String email_cliente;
-	 private String nombre_cliente;
-	 private String telefono_cliente;
-	public long getCedula_clientes() {
-		return cedula_cliente;
+	@Column(name="cedula_cliente")
+	 private long cedulaCliente;
+	@Column(name="direccion_cliente")
+	 private String direccionCliente;
+	@Column(name="email_cliente")
+	 private String emailCliente;
+	@Column(name="nombre_cliente")
+	 private String nombreCliente;
+	@Column(name="telefono_cliente")
+	 private String telefonoCliente;
+	
+	public long getCedulaCliente() {
+		return cedulaCliente;
 	}
-	public void setCedula_clientes(long cedula_clientes) {
-		this.cedula_cliente = cedula_clientes;
+	public void setCedulaCliente(long cedulaCliente) {
+		this.cedulaCliente = cedulaCliente;
 	}
-	public String getDireccion_cliente() {
-		return direccion_cliente;
+	public String getDireccionCliente() {
+		return direccionCliente;
 	}
-	public void setDireccion_cliente(String direccion_cliente) {
-		this.direccion_cliente = direccion_cliente;
+	public void setDireccionCliente(String direccionCliente) {
+		this.direccionCliente = direccionCliente;
 	}
-	public String getEmail_cliente() {
-		return email_cliente;
+	public String getEmailCliente() {
+		return emailCliente;
 	}
-	public void setEmail_cliente(String email_cliente) {
-		this.email_cliente = email_cliente;
+	public void setEmailCliente(String emailCliente) {
+		this.emailCliente = emailCliente;
 	}
-	public String getNombre_cliente() {
-		return nombre_cliente;
+	public String getNombreCliente() {
+		return nombreCliente;
 	}
-	public void setNombre_cliente(String nombre_cliente) {
-		this.nombre_cliente = nombre_cliente;
+	public void setNombreCliente(String nombreCliente) {
+		this.nombreCliente = nombreCliente;
 	}
-	public String getTelefono_cliente() {
-		return telefono_cliente;
+	public String getTelefonoCliente() {
+		return telefonoCliente;
 	}
-	public void setTelefono_cliente(String telefono_cliente) {
-		this.telefono_cliente = telefono_cliente;
+	public void setTelefonoCliente(String telefonoCliente) {
+		this.telefonoCliente = telefonoCliente;
 	}
+	
+	
 	 
-	 
-
 }

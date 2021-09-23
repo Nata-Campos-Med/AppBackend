@@ -1,36 +1,39 @@
- package ElEcuipoGrupos30.Backend.modelo;
+package ElEcuipoGrupos30.Backend.modelo;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
 public class Usuarios {
-	 
+
 	@Id
-	 private long cedula_usuario;// igual al de la base de datos
-	 private String nombre_usuario;
-	 private String email_usuario;
-	 private String usuario;
-	 private String password;
-	 
-	 
-	public long getCedula_usuario() {
-		return cedula_usuario;
+	@Column(name = "cedula_usuario")
+	private long cedulaUsuario;
+	@Column(name = "nombre_usuario")
+	private String nombreUsuario;
+	@Column(name = "email_usuario")
+	private String emailUsuario;
+	private String usuario;
+	private String password;
+	
+	public long getCedulaUsuario() {
+		return cedulaUsuario;
 	}
-	public void setCedula_usuario(long cedula_usuario) {
-		this.cedula_usuario = cedula_usuario;
+	public void setCedulaUsuario(long cedulaUsuario) {
+		this.cedulaUsuario = cedulaUsuario;
 	}
-	public String getNombre_usuario() {
-		return nombre_usuario;
+	public String getNombreUsuario() {
+		return nombreUsuario;
 	}
-	public void setNombre_usuario(String nombre_usuario) {
-		this.nombre_usuario = nombre_usuario;
+	public void setNombreUsuario(String nombreUsuario) {
+		this.nombreUsuario = nombreUsuario;
 	}
-	public String getEmail_usuario() {
-		return email_usuario;
+	public String getEmailUsuario() {
+		return emailUsuario;
 	}
-	public void setEmail_usuario(String email_usuario) {
-		this.email_usuario = email_usuario;
+	public void setEmailUsuario(String emailUsuario) {
+		this.emailUsuario = emailUsuario;
 	}
 	public String getUsuario() {
 		return usuario;
@@ -44,7 +47,7 @@ public class Usuarios {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	 
-	 
+	
+	
 
 }

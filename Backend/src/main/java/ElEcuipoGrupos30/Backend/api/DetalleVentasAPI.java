@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import ElEcuipoGrupos30.Backend.DAO.DetalleVentasDAO;
-import ElEcuipoGrupos30.Backend.modelo.DetallesVentas;
+import ElEcuipoGrupos30.Backend.modelo.DetalleVentas;
 
 
 @RestController
@@ -18,12 +18,12 @@ public class DetalleVentasAPI {
 	private DetalleVentasDAO detalleVentasDAO;
 	
 	@PostMapping ("/guardar")
-	public void guardar (@RequestBody DetallesVentas detallesVentas) {
+	public void guardar (@RequestBody DetalleVentas detallesVentas) {
 		detalleVentasDAO.save(detallesVentas);
 	}
 	
 	@GetMapping ("/listar")
-	public List<DetallesVentas> listar(){
+	public List<DetalleVentas> listar(){
 		return detalleVentasDAO.findAll();
 	}
 	
@@ -33,7 +33,7 @@ public class DetalleVentasAPI {
 	}
 	
 	@PutMapping ("/actualizar")
-	public void actualizar(@RequestBody DetallesVentas detallesVentas) {
+	public void actualizar(@RequestBody DetalleVentas detallesVentas) {
 		detalleVentasDAO.save(detallesVentas);
 	}
 
