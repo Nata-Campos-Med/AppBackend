@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import ElEcuipoGrupos30.Backend.modelo.DetalleVentas;
 
-public interface DetalleVentasDAO extends JpaRepository<DetalleVentas, Integer> {
+public interface DetalleVentasDAO extends JpaRepository<DetalleVentas, Long> {
 
 }

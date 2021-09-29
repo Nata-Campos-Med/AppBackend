@@ -3,8 +3,10 @@ package ElEcuipoGrupos30.Backend.modelo;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="usuarios")
 public class Usuarios {
 
 	@Id
@@ -14,7 +16,9 @@ public class Usuarios {
 	private String nombreUsuario;
 	@Column(name = "email_usuario")
 	private String emailUsuario;
+	@Column(name = "usuario")
 	private String usuario;
+	@Column(name = "password")
 	private String password;
 	
 	public long getCedulaUsuario() {

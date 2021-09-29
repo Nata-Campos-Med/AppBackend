@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import ElEcuipoGrupos30.Backend.modelo.Usuarios;
 
-public interface UsuariosDAO extends JpaRepository<Usuarios, Integer> {
+public interface UsuariosDAO extends JpaRepository<Usuarios, Long> {
 
 }
