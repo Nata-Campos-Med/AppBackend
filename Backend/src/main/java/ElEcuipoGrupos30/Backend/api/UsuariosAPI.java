@@ -28,13 +28,7 @@ public class UsuariosAPI {
 	public List<Usuarios> listar(){
 		return usuariosDAO.findAll();		
 	}
-	@GetMapping("/consultar/{id}")
-	public List<Usuarios> listar(@PathVariable("id") Long id){
-		List<Usuarios> lista = new ArrayList<Usuarios>();
-		lista.add(usuariosDAO.getById(id));
-		return lista ;		
-	}
-	
+		
 	@DeleteMapping("/eliminar/{id}")
 	public void eliminar(@PathVariable("id") Long id) {
 		usuariosDAO.deleteById(id);		
