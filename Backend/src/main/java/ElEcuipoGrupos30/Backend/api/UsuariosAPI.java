@@ -1,6 +1,8 @@
 package ElEcuipoGrupos30.Backend.api;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -25,6 +27,12 @@ public class UsuariosAPI {
 	@GetMapping("/listar")
 	public List<Usuarios> listar(){
 		return usuariosDAO.findAll();		
+	}
+	@GetMapping("/consultar/{id}")
+	public List<Usuarios> listar(@PathVariable("id") Long id){
+		List<Usuarios> lista = new ArrayList<Usuarios>();
+		lista.add(usuariosDAO.getById(id));
+		return lista ;		
 	}
 	
 	@DeleteMapping("/eliminar/{id}")
