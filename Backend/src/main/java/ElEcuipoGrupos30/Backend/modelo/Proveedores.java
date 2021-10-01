@@ -1,9 +1,16 @@
 package ElEcuipoGrupos30.Backend.modelo;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+
 
 @Entity
 @Table(name="proveedores")
@@ -20,6 +27,7 @@ public class Proveedores {
 	private String direccionProveedor;
 	@Column(name="telefono_proveedor")
 	private String telefonoProveedor;
+	
 	
 	public long getNitProveedor() {
 		return nitProveedor;
@@ -51,6 +59,7 @@ public class Proveedores {
 	public void setTelefonoProveedor(String telefonoProveedor) {
 		this.telefonoProveedor = telefonoProveedor;
 	}
+	
 	
 	
 }

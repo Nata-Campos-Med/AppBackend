@@ -3,6 +3,8 @@ package ElEcuipoGrupos30.Backend.modelo;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -36,6 +38,7 @@ public class Productos {
 	public void setNombreProducto(String nombreProducto) {
 		this.nombreProducto = nombreProducto;
 	}
+	
 	public long getNitProveedor() {
 		return nitProveedor;
 	}
