@@ -16,12 +16,13 @@ public class Productos {
 	private String nombreProducto;
 	@Column(name="nit_proveedor")
 	private long nitProveedor;
-	@Column(name="iva_producto")
-	private  double ivaProducto;
 	@Column(name="precio_compra")
 	private double precioCompra;
+	@Column(name="iva_compra")
+	private  double ivaCompra;	
 	@Column(name="precio_venta")
 	private double precioVenta;
+	
 	
 	public long getCodigoProducto() {
 		return codigoProducto;
@@ -41,17 +42,17 @@ public class Productos {
 	public void setNitProveedor(long nitProveedor) {
 		this.nitProveedor = nitProveedor;
 	}
-	public double getIvaProducto() {
-		return ivaProducto;
-	}
-	public void setIvaProducto(double ivaProducto) {
-		this.ivaProducto = ivaProducto;
-	}
 	public double getPrecioCompra() {
 		return precioCompra;
 	}
 	public void setPrecioCompra(double precioCompra) {
 		this.precioCompra = precioCompra;
+	}
+	public double getIvaCompra() {
+		return ivaCompra;
+	}
+	public void setIvaCompra(double ivaCompra) {
+		this.ivaCompra = ivaCompra;
 	}
 	public double getPrecioVenta() {
 		return precioVenta;
@@ -59,6 +60,7 @@ public class Productos {
 	public void setPrecioVenta(double precioVenta) {
 		this.precioVenta = precioVenta;
 	}
+	
 	
 
 }

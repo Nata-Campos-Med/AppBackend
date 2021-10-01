@@ -10,8 +10,7 @@ import ElEcuipoGrupos30.Backend.modelo.DetalleVentas;
 
 
 @RestController
-@RequestMapping ("Detalle_ventas")
-
+@RequestMapping ("detalle_ventas")
 public class DetalleVentasAPI {
 
 	@Autowired
