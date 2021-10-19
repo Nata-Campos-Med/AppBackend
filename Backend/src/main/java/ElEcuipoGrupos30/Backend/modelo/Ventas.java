@@ -23,7 +23,15 @@ public class Ventas {
 	private double ivaVenta;
 	@Column(name="total_venta")
 	private double totalVenta;
+	@Column(name="nombre_cliente")
+	private String nombreCliente;
 	
+	public String getNombreCliente() {
+		return nombreCliente;
+	}
+	public void setNombreCliente(String nombreCliente) {
+		this.nombreCliente = nombreCliente;
+	}
 	public long getCodigoVenta() {
 		return codigoVenta;
 	}
