@@ -17,8 +17,6 @@ public class Ventas {
 	private long codigoVenta;
 	@Column(name="cedula_cliente")
 	private long cedulaCliente;
-	@Column(name="cedula_usuario")
-	private long cedulaUsuario;
 	@Column(name="valor_venta")
 	private double valorVenta;
 	@Column(name="iva_venta")
@@ -38,12 +36,7 @@ public class Ventas {
 	public void setCedulaCliente(long cedulaCliente) {
 		this.cedulaCliente = cedulaCliente;
 	}
-	public long getCedulaUsuario() {
-		return cedulaUsuario;
-	}
-	public void setCedulaUsuario(long cedulaUsuario) {
-		this.cedulaUsuario = cedulaUsuario;
-	}
+	
 	public double getValorVenta() {
 		return valorVenta;
 	}
